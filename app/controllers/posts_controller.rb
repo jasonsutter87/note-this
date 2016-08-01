@@ -17,6 +17,23 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 	end
 
+	def edit
+		@post = Post.find(params[:id])
+	end
+
+	def update
+		p @post = Post.find(params[:id])
+  	    p @post.update(post_params)
+  	    p "*" * 100
+  		redirect_to post_path(@post)
+	end 
+
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy()
+		redirect_to(:root)
+	end
+
 
 	private
 
