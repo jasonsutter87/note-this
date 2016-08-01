@@ -22,9 +22,8 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		p @post = Post.find(params[:id])
-  	    p @post.update(post_params)
-  	    p "*" * 100
+		@post = Post.find(params[:id])
+  	    @post.update(post_params)
   		redirect_to post_path(@post)
 	end 
 
